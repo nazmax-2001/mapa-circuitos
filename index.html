@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0c4f18f3039a481108c74b511220310a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+            z-index: 1000; background: white; padding: 6px 14px;
+            border-radius: 6px; box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            font-family: sans-serif; font-size: 16px; font-weight: bold;">
+  Circuitos por Entre Ríos
+</div>
+    
+            <div class="folium-map" id="map_0c4f18f3039a481108c74b511220310a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0c4f18f3039a481108c74b511220310a = L.map(
+                "map_0c4f18f3039a481108c74b511220310a",
+                {
+                    center: [-32.0, -59.3],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-34.2,
+-61.0,
+],
+[
+-29.9,
+-57.6,
+],
+],
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5842c930eda0a51cf2333b50e616db5e = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 7,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5842c930eda0a51cf2333b50e616db5e.addTo(map_0c4f18f3039a481108c74b511220310a);
+        
+    
+            var feature_group_f5512b30735c916eaef91ec74f50d02e = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_5ac44396e471f22da217cf2620b39a6e = L.marker(
+                [-33.0077976973495, -58.5107700863228],
+                {
+}
+            ).addTo(feature_group_f5512b30735c916eaef91ec74f50d02e);
+        
+    
+            var div_icon_b85ab257b78907bc75b16f50e451c535 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#e6194b; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_b20e45fe33fbd13ac057f8513ba67dec = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a2a5b508494b2dd5525c5ba097955ee9 = $(`<div id="html_a2a5b508494b2dd5525c5ba097955ee9" style="width: 100.0%; height: 100.0%;"><b>Gualeguaychú</b><br>Circuito 1. Gualeguaychú<br>Permanencia: 8:30 a 10:30</div>`)[0];
+                popup_b20e45fe33fbd13ac057f8513ba67dec.setContent(html_a2a5b508494b2dd5525c5ba097955ee9);
+            
+        
+
+        marker_5ac44396e471f22da217cf2620b39a6e.bindPopup(popup_b20e45fe33fbd13ac057f8513ba67dec)
+        ;
+
+        
+    
+    
+            marker_5ac44396e471f22da217cf2620b39a6e.bindTooltip(
+                `<div>
+                     Gualeguaychú
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ac44396e471f22da217cf2620b39a6e.setIcon(div_icon_b85ab257b78907bc75b16f50e451c535);
+            
+    
+            var marker_be979751e6d4f54308430cf0f9389c16 = L.marker(
+                [-33.1504300803974, -59.3105755860058],
+                {
+}
+            ).addTo(feature_group_f5512b30735c916eaef91ec74f50d02e);
+        
+    
+            var div_icon_4749154dc43b276f242ed19fc14a45e6 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#e6194b; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_94d7fc43af133cb568ca54b886eedc38 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_792e0dbd0e604f1f1d38f3fc22c52b62 = $(`<div id="html_792e0dbd0e604f1f1d38f3fc22c52b62" style="width: 100.0%; height: 100.0%;"><b>Gualeguay</b><br>Circuito 1. Gualeguaychú<br>Permanencia: 11:00 a 12:00</div>`)[0];
+                popup_94d7fc43af133cb568ca54b886eedc38.setContent(html_792e0dbd0e604f1f1d38f3fc22c52b62);
+            
+        
+
+        marker_be979751e6d4f54308430cf0f9389c16.bindPopup(popup_94d7fc43af133cb568ca54b886eedc38)
+        ;
+
+        
+    
+    
+            marker_be979751e6d4f54308430cf0f9389c16.bindTooltip(
+                `<div>
+                     Gualeguay
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_be979751e6d4f54308430cf0f9389c16.setIcon(div_icon_4749154dc43b276f242ed19fc14a45e6);
+            
+    
+            var marker_346585293a81e2342bc2a1eb0f270df3 = L.marker(
+                [-32.6216058234351, -60.1579539516715],
+                {
+}
+            ).addTo(feature_group_f5512b30735c916eaef91ec74f50d02e);
+        
+    
+            var div_icon_5fd4060b8402192ec67715abbe265c9e = L.divIcon({
+  "html": "\u003cdiv style=\"background:#e6194b; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_666659e1f2dcdaea34492d144cf68b30 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e1e909f6cabe45fab1bc147085c17a6c = $(`<div id="html_e1e909f6cabe45fab1bc147085c17a6c" style="width: 100.0%; height: 100.0%;"><b>Victoria</b><br>Circuito 1. Gualeguaychú<br>Permanencia: 13:00 a 15:00</div>`)[0];
+                popup_666659e1f2dcdaea34492d144cf68b30.setContent(html_e1e909f6cabe45fab1bc147085c17a6c);
+            
+        
+
+        marker_346585293a81e2342bc2a1eb0f270df3.bindPopup(popup_666659e1f2dcdaea34492d144cf68b30)
+        ;
+
+        
+    
+    
+            marker_346585293a81e2342bc2a1eb0f270df3.bindTooltip(
+                `<div>
+                     Victoria
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_346585293a81e2342bc2a1eb0f270df3.setIcon(div_icon_5fd4060b8402192ec67715abbe265c9e);
+            
+    
+            var feature_group_c69449d4f367f4b81f07df2d0fd52a56 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_dd0c5b78477f21b6d29f88f5fcb945d3 = L.marker(
+                [-32.4846612655344, -58.2321207793941],
+                {
+}
+            ).addTo(feature_group_c69449d4f367f4b81f07df2d0fd52a56);
+        
+    
+            var div_icon_3310f6d32173369bc6a4d35601a40946 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#3cb44b; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_dd8c6983e485c1f61b0ccea740a27daf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4b66fcbfe06d8f4fe61f7cb5dd0ef448 = $(`<div id="html_4b66fcbfe06d8f4fe61f7cb5dd0ef448" style="width: 100.0%; height: 100.0%;"><b>Concepción del Uruguay</b><br>Circuito 2. Concepción del Uruguay<br>Permanencia: 8:30 a 10:30</div>`)[0];
+                popup_dd8c6983e485c1f61b0ccea740a27daf.setContent(html_4b66fcbfe06d8f4fe61f7cb5dd0ef448);
+            
+        
+
+        marker_dd0c5b78477f21b6d29f88f5fcb945d3.bindPopup(popup_dd8c6983e485c1f61b0ccea740a27daf)
+        ;
+
+        
+    
+    
+            marker_dd0c5b78477f21b6d29f88f5fcb945d3.bindTooltip(
+                `<div>
+                     Concepción del Uruguay
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd0c5b78477f21b6d29f88f5fcb945d3.setIcon(div_icon_3310f6d32173369bc6a4d35601a40946);
+            
+    
+            var marker_9e1f7e84d24a0b5d0d180c221dc59445 = L.marker(
+                [-32.6910460992997, -58.8884200764691],
+                {
+}
+            ).addTo(feature_group_c69449d4f367f4b81f07df2d0fd52a56);
+        
+    
+            var div_icon_9a62bda058a8b67908cd4bc5d5282136 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#3cb44b; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_f776f9c88d4e6a59037ba9f20c09d02c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_416d9d5fdf71d7dc860f6fe57ae80cb6 = $(`<div id="html_416d9d5fdf71d7dc860f6fe57ae80cb6" style="width: 100.0%; height: 100.0%;"><b>Urdinarrain</b><br>Circuito 2. Concepción del Uruguay<br>Permanencia: 11:30 a 12:30</div>`)[0];
+                popup_f776f9c88d4e6a59037ba9f20c09d02c.setContent(html_416d9d5fdf71d7dc860f6fe57ae80cb6);
+            
+        
+
+        marker_9e1f7e84d24a0b5d0d180c221dc59445.bindPopup(popup_f776f9c88d4e6a59037ba9f20c09d02c)
+        ;
+
+        
+    
+    
+            marker_9e1f7e84d24a0b5d0d180c221dc59445.bindTooltip(
+                `<div>
+                     Urdinarrain
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9e1f7e84d24a0b5d0d180c221dc59445.setIcon(div_icon_9a62bda058a8b67908cd4bc5d5282136);
+            
+    
+            var marker_cde03de0cd68504b42d5f9dfe9395cf0 = L.marker(
+                [-32.3006755060116, -59.1390668036666],
+                {
+}
+            ).addTo(feature_group_c69449d4f367f4b81f07df2d0fd52a56);
+        
+    
+            var div_icon_45690f8e32c9a55cb59465613f2437a7 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#3cb44b; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_f268e418c0242f619a861a6932c4255c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4122c5ffe7b4ce73025c7b074239277 = $(`<div id="html_f4122c5ffe7b4ce73025c7b074239277" style="width: 100.0%; height: 100.0%;"><b>Rosario del Tala</b><br>Circuito 2. Concepción del Uruguay<br>Permanencia: 13:30 a 15:30</div>`)[0];
+                popup_f268e418c0242f619a861a6932c4255c.setContent(html_f4122c5ffe7b4ce73025c7b074239277);
+            
+        
+
+        marker_cde03de0cd68504b42d5f9dfe9395cf0.bindPopup(popup_f268e418c0242f619a861a6932c4255c)
+        ;
+
+        
+    
+    
+            marker_cde03de0cd68504b42d5f9dfe9395cf0.bindTooltip(
+                `<div>
+                     Rosario del Tala
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cde03de0cd68504b42d5f9dfe9395cf0.setIcon(div_icon_45690f8e32c9a55cb59465613f2437a7);
+            
+    
+            var feature_group_612c2f6dd75e67985448529351eae42a = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_75dbb6956cf842d4c47d87597da923b4 = L.marker(
+                [-31.3974508914818, -58.0172034297914],
+                {
+}
+            ).addTo(feature_group_612c2f6dd75e67985448529351eae42a);
+        
+    
+            var div_icon_44d4ea1675e5c1869054aa3bf65514b6 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#4363d8; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_73e87125c095cf105fe22b55ec8af581 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c4a2024ecb0f2fa79e530457fa7a6d9c = $(`<div id="html_c4a2024ecb0f2fa79e530457fa7a6d9c" style="width: 100.0%; height: 100.0%;"><b>Concordia</b><br>Circuito 3. Concordia<br>Permanencia: 8:00 a 10:00</div>`)[0];
+                popup_73e87125c095cf105fe22b55ec8af581.setContent(html_c4a2024ecb0f2fa79e530457fa7a6d9c);
+            
+        
+
+        marker_75dbb6956cf842d4c47d87597da923b4.bindPopup(popup_73e87125c095cf105fe22b55ec8af581)
+        ;
+
+        
+    
+    
+            marker_75dbb6956cf842d4c47d87597da923b4.bindTooltip(
+                `<div>
+                     Concordia
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_75dbb6956cf842d4c47d87597da923b4.setIcon(div_icon_44d4ea1675e5c1869054aa3bf65514b6);
+            
+    
+            var marker_ac0a723039e2ec331b2b59714eef0b04 = L.marker(
+                [-32.2250500793422, -58.1422695022137],
+                {
+}
+            ).addTo(feature_group_612c2f6dd75e67985448529351eae42a);
+        
+    
+            var div_icon_5efe91a74f49283b369f0f6a0ac3f2d2 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#4363d8; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_4088729d6ed4f8a834526a1c1976e12c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_28543ddd1240fc1beff4585469c28d86 = $(`<div id="html_28543ddd1240fc1beff4585469c28d86" style="width: 100.0%; height: 100.0%;"><b>Colón</b><br>Circuito 3. Concordia<br>Permanencia: 11:30 a 13:30</div>`)[0];
+                popup_4088729d6ed4f8a834526a1c1976e12c.setContent(html_28543ddd1240fc1beff4585469c28d86);
+            
+        
+
+        marker_ac0a723039e2ec331b2b59714eef0b04.bindPopup(popup_4088729d6ed4f8a834526a1c1976e12c)
+        ;
+
+        
+    
+    
+            marker_ac0a723039e2ec331b2b59714eef0b04.bindTooltip(
+                `<div>
+                     Colón
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac0a723039e2ec331b2b59714eef0b04.setIcon(div_icon_5efe91a74f49283b369f0f6a0ac3f2d2);
+            
+    
+            var marker_3e937a2dcc4eb6aee4e2b36eadb949f0 = L.marker(
+                [-31.8676375710354, -59.0268852125777],
+                {
+}
+            ).addTo(feature_group_612c2f6dd75e67985448529351eae42a);
+        
+    
+            var div_icon_991b512fa2a9a8e8478bdf4aebf61e8c = L.divIcon({
+  "html": "\u003cdiv style=\"background:#4363d8; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_2ba5d83151ea9ea85ebcf72a0aeec0c2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_07df18843c12514ecdfb7b03c4d06791 = $(`<div id="html_07df18843c12514ecdfb7b03c4d06791" style="width: 100.0%; height: 100.0%;"><b>Villaguay</b><br>Circuito 3. Concordia<br>Permanencia: 14:30 a 16:30</div>`)[0];
+                popup_2ba5d83151ea9ea85ebcf72a0aeec0c2.setContent(html_07df18843c12514ecdfb7b03c4d06791);
+            
+        
+
+        marker_3e937a2dcc4eb6aee4e2b36eadb949f0.bindPopup(popup_2ba5d83151ea9ea85ebcf72a0aeec0c2)
+        ;
+
+        
+    
+    
+            marker_3e937a2dcc4eb6aee4e2b36eadb949f0.bindTooltip(
+                `<div>
+                     Villaguay
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e937a2dcc4eb6aee4e2b36eadb949f0.setIcon(div_icon_991b512fa2a9a8e8478bdf4aebf61e8c);
+            
+    
+            var feature_group_74710df300177e694a336fecd186b80d = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_a27ed4e271205d057d44c630cbcfcefa = L.marker(
+                [-30.7547242034728, -57.9817893682594],
+                {
+}
+            ).addTo(feature_group_74710df300177e694a336fecd186b80d);
+        
+    
+            var div_icon_9cfe21bbd66b4d7f97320c4cb4d2212d = L.divIcon({
+  "html": "\u003cdiv style=\"background:#f58231; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_daae19c156cf521dc8f4f4324b063391 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b832873ec407eed79c77bfa8c954cd0 = $(`<div id="html_8b832873ec407eed79c77bfa8c954cd0" style="width: 100.0%; height: 100.0%;"><b>Chajarí</b><br>Circuito 4. Chajarí<br>Permanencia: 8:30 a 10:30</div>`)[0];
+                popup_daae19c156cf521dc8f4f4324b063391.setContent(html_8b832873ec407eed79c77bfa8c954cd0);
+            
+        
+
+        marker_a27ed4e271205d057d44c630cbcfcefa.bindPopup(popup_daae19c156cf521dc8f4f4324b063391)
+        ;
+
+        
+    
+    
+            marker_a27ed4e271205d057d44c630cbcfcefa.bindTooltip(
+                `<div>
+                     Chajarí
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a27ed4e271205d057d44c630cbcfcefa.setIcon(div_icon_9cfe21bbd66b4d7f97320c4cb4d2212d);
+            
+    
+            var marker_fbb5421f2434c67bec471a6a3fc5274a = L.marker(
+                [-30.3854437363788, -58.7502572752322],
+                {
+}
+            ).addTo(feature_group_74710df300177e694a336fecd186b80d);
+        
+    
+            var div_icon_cd9701467e79c2ebe4a312e19d486694 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#f58231; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_ae3af9dddc4416dd31c5e89efd65ac0f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e774b4aa576f09e12bb10ab16d6c5c2d = $(`<div id="html_e774b4aa576f09e12bb10ab16d6c5c2d" style="width: 100.0%; height: 100.0%;"><b>San José de Feliciano</b><br>Circuito 4. Chajarí<br>Permanencia: 12:30 a 14:30</div>`)[0];
+                popup_ae3af9dddc4416dd31c5e89efd65ac0f.setContent(html_e774b4aa576f09e12bb10ab16d6c5c2d);
+            
+        
+
+        marker_fbb5421f2434c67bec471a6a3fc5274a.bindPopup(popup_ae3af9dddc4416dd31c5e89efd65ac0f)
+        ;
+
+        
+    
+    
+            marker_fbb5421f2434c67bec471a6a3fc5274a.bindTooltip(
+                `<div>
+                     San José de Feliciano
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fbb5421f2434c67bec471a6a3fc5274a.setIcon(div_icon_cd9701467e79c2ebe4a312e19d486694);
+            
+    
+            var marker_377e405c409e38576eb0d907812c9585 = L.marker(
+                [-30.7404766242794, -59.6443012787354],
+                {
+}
+            ).addTo(feature_group_74710df300177e694a336fecd186b80d);
+        
+    
+            var div_icon_d2763a36c77d5b123a242de2faa218cb = L.divIcon({
+  "html": "\u003cdiv style=\"background:#f58231; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_f68278d3036e2cf6561d618ad4f21907 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7020e36473d376a1f5df33ddaa95f195 = $(`<div id="html_7020e36473d376a1f5df33ddaa95f195" style="width: 100.0%; height: 100.0%;"><b>La Paz</b><br>Circuito 4. Chajarí<br>Permanencia: 15:30 a 17:30</div>`)[0];
+                popup_f68278d3036e2cf6561d618ad4f21907.setContent(html_7020e36473d376a1f5df33ddaa95f195);
+            
+        
+
+        marker_377e405c409e38576eb0d907812c9585.bindPopup(popup_f68278d3036e2cf6561d618ad4f21907)
+        ;
+
+        
+    
+    
+            marker_377e405c409e38576eb0d907812c9585.bindTooltip(
+                `<div>
+                     La Paz
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_377e405c409e38576eb0d907812c9585.setIcon(div_icon_d2763a36c77d5b123a242de2faa218cb);
+            
+    
+            var feature_group_8e6eb5d8fd626019900ed1a49f77d526 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_470cf55efcea00e230d6f3c2d33a59d9 = L.marker(
+                [-30.9562142806914, -58.7795875052823],
+                {
+}
+            ).addTo(feature_group_8e6eb5d8fd626019900ed1a49f77d526);
+        
+    
+            var div_icon_aec3ad607c3af38e0ca78cae46966ff7 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#911eb4; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_6d53ffd41eb91c84aef882408740c941 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_09ddfff3001173cbdd651612075c3db7 = $(`<div id="html_09ddfff3001173cbdd651612075c3db7" style="width: 100.0%; height: 100.0%;"><b>Federal</b><br>Circuito 5. Federal<br>Permanencia: 8:30 a 10:30</div>`)[0];
+                popup_6d53ffd41eb91c84aef882408740c941.setContent(html_09ddfff3001173cbdd651612075c3db7);
+            
+        
+
+        marker_470cf55efcea00e230d6f3c2d33a59d9.bindPopup(popup_6d53ffd41eb91c84aef882408740c941)
+        ;
+
+        
+    
+    
+            marker_470cf55efcea00e230d6f3c2d33a59d9.bindTooltip(
+                `<div>
+                     Federal
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_470cf55efcea00e230d6f3c2d33a59d9.setIcon(div_icon_aec3ad607c3af38e0ca78cae46966ff7);
+            
+    
+            var marker_8cb420459fb165ca54f96fa9cb8d71ad = L.marker(
+                [-31.2395232659228, -59.2173710836707],
+                {
+}
+            ).addTo(feature_group_8e6eb5d8fd626019900ed1a49f77d526);
+        
+    
+            var div_icon_93b912384bc0fae4fcc7246d9e289555 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#911eb4; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_ce99e3f7a06d0058cfd845029da5ff31 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5c0cb404125d71c8e0d7d622365ba560 = $(`<div id="html_5c0cb404125d71c8e0d7d622365ba560" style="width: 100.0%; height: 100.0%;"><b>Sauce de Luna</b><br>Circuito 5. Federal<br>Permanencia: 11:15 a 13:00</div>`)[0];
+                popup_ce99e3f7a06d0058cfd845029da5ff31.setContent(html_5c0cb404125d71c8e0d7d622365ba560);
+            
+        
+
+        marker_8cb420459fb165ca54f96fa9cb8d71ad.bindPopup(popup_ce99e3f7a06d0058cfd845029da5ff31)
+        ;
+
+        
+    
+    
+            marker_8cb420459fb165ca54f96fa9cb8d71ad.bindTooltip(
+                `<div>
+                     Sauce de Luna
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8cb420459fb165ca54f96fa9cb8d71ad.setIcon(div_icon_93b912384bc0fae4fcc7246d9e289555);
+            
+    
+            var marker_49262676b479fce82e8e9e58f9b06052 = L.marker(
+                [-31.343579683492, -59.4463897661907],
+                {
+}
+            ).addTo(feature_group_8e6eb5d8fd626019900ed1a49f77d526);
+        
+    
+            var div_icon_aed1d6dc655bc592cc0954813e63191a = L.divIcon({
+  "html": "\u003cdiv style=\"background:#911eb4; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_cc69003579d9772febf9a7d80c9cd50b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7d483b6a468641249a876cddb50e9c6d = $(`<div id="html_7d483b6a468641249a876cddb50e9c6d" style="width: 100.0%; height: 100.0%;"><b>Bovril</b><br>Circuito 5. Federal<br>Permanencia: 14:00 a 16:00</div>`)[0];
+                popup_cc69003579d9772febf9a7d80c9cd50b.setContent(html_7d483b6a468641249a876cddb50e9c6d);
+            
+        
+
+        marker_49262676b479fce82e8e9e58f9b06052.bindPopup(popup_cc69003579d9772febf9a7d80c9cd50b)
+        ;
+
+        
+    
+    
+            marker_49262676b479fce82e8e9e58f9b06052.bindTooltip(
+                `<div>
+                     Bovril
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49262676b479fce82e8e9e58f9b06052.setIcon(div_icon_aed1d6dc655bc592cc0954813e63191a);
+            
+    
+            var feature_group_c3ea0e1a1d944be64a6025db8e6f0d6b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_06c8e93c93fd3dec9c81307b324003b2 = L.marker(
+                [-32.0307595065229, -60.3060920490641],
+                {
+}
+            ).addTo(feature_group_c3ea0e1a1d944be64a6025db8e6f0d6b);
+        
+    
+            var div_icon_3687be00c0eaa1781497f7d110e85ed8 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#008080; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_d593a8e65768519d835702f643158ae3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e4ab80615fb03a9c66a0d79af9f31a3c = $(`<div id="html_e4ab80615fb03a9c66a0d79af9f31a3c" style="width: 100.0%; height: 100.0%;"><b>Crespo</b><br>Circuito 6. Crespo/Libertador/Ramírez<br>Permanencia: a definir</div>`)[0];
+                popup_d593a8e65768519d835702f643158ae3.setContent(html_e4ab80615fb03a9c66a0d79af9f31a3c);
+            
+        
+
+        marker_06c8e93c93fd3dec9c81307b324003b2.bindPopup(popup_d593a8e65768519d835702f643158ae3)
+        ;
+
+        
+    
+    
+            marker_06c8e93c93fd3dec9c81307b324003b2.bindTooltip(
+                `<div>
+                     Crespo
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_06c8e93c93fd3dec9c81307b324003b2.setIcon(div_icon_3687be00c0eaa1781497f7d110e85ed8);
+            
+    
+            var marker_42111b9a0ee25fc763ea11dff7dea168 = L.marker(
+                [-32.0739285541973, -60.4610408161734],
+                {
+}
+            ).addTo(feature_group_c3ea0e1a1d944be64a6025db8e6f0d6b);
+        
+    
+            var div_icon_809ffc7ffb14ff1586cc7e03d31d52d1 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#008080; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_0e45311f4128fcf12942ddca216d7468 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_177d59ff3e157541eef5e43e5fc2fe5b = $(`<div id="html_177d59ff3e157541eef5e43e5fc2fe5b" style="width: 100.0%; height: 100.0%;"><b>Villa Libertador San Martín</b><br>Circuito 6. Crespo/Libertador/Ramírez<br>Permanencia: a definir</div>`)[0];
+                popup_0e45311f4128fcf12942ddca216d7468.setContent(html_177d59ff3e157541eef5e43e5fc2fe5b);
+            
+        
+
+        marker_42111b9a0ee25fc763ea11dff7dea168.bindPopup(popup_0e45311f4128fcf12942ddca216d7468)
+        ;
+
+        
+    
+    
+            marker_42111b9a0ee25fc763ea11dff7dea168.bindTooltip(
+                `<div>
+                     Villa Libertador San Martín
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_42111b9a0ee25fc763ea11dff7dea168.setIcon(div_icon_809ffc7ffb14ff1586cc7e03d31d52d1);
+            
+    
+            var marker_447b42cf20c2a9680e19c0170ecfc3d3 = L.marker(
+                [-32.1772681367295, -60.2016467358906],
+                {
+}
+            ).addTo(feature_group_c3ea0e1a1d944be64a6025db8e6f0d6b);
+        
+    
+            var div_icon_37523080461ea07c0dc0137d5cbd10ad = L.divIcon({
+  "html": "\u003cdiv style=\"background:#008080; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_23fa90bd32efe07ba3ffb4879352bee6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e691abfbd71a3c4fb4dbd15bbff6d5c3 = $(`<div id="html_e691abfbd71a3c4fb4dbd15bbff6d5c3" style="width: 100.0%; height: 100.0%;"><b>General Ramírez</b><br>Circuito 6. Crespo/Libertador/Ramírez<br>Permanencia: a definir</div>`)[0];
+                popup_23fa90bd32efe07ba3ffb4879352bee6.setContent(html_e691abfbd71a3c4fb4dbd15bbff6d5c3);
+            
+        
+
+        marker_447b42cf20c2a9680e19c0170ecfc3d3.bindPopup(popup_23fa90bd32efe07ba3ffb4879352bee6)
+        ;
+
+        
+    
+    
+            marker_447b42cf20c2a9680e19c0170ecfc3d3.bindTooltip(
+                `<div>
+                     General Ramírez
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_447b42cf20c2a9680e19c0170ecfc3d3.setIcon(div_icon_37523080461ea07c0dc0137d5cbd10ad);
+            
+    
+            var feature_group_958eb0f74a9416228f9175af33bb84b2 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_dc2d7a425031b85f3ad019da0447fcde = L.marker(
+                [-32.3989615251678, -59.787695341605],
+                {
+}
+            ).addTo(feature_group_958eb0f74a9416228f9175af33bb84b2);
+        
+    
+            var div_icon_1b3c4661d33321bce88a1327fa117355 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#9a6324; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e1\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_7d3c700e9000354f1aebec71d216911f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9039118bb20a6b392dd6aa12f338018d = $(`<div id="html_9039118bb20a6b392dd6aa12f338018d" style="width: 100.0%; height: 100.0%;"><b>Nogoyá</b><br>Circuito 7. Nogoyá + Diamante + Viale + Cerrito + María Grande<br>Permanencia: a definir</div>`)[0];
+                popup_7d3c700e9000354f1aebec71d216911f.setContent(html_9039118bb20a6b392dd6aa12f338018d);
+            
+        
+
+        marker_dc2d7a425031b85f3ad019da0447fcde.bindPopup(popup_7d3c700e9000354f1aebec71d216911f)
+        ;
+
+        
+    
+    
+            marker_dc2d7a425031b85f3ad019da0447fcde.bindTooltip(
+                `<div>
+                     Nogoyá
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dc2d7a425031b85f3ad019da0447fcde.setIcon(div_icon_1b3c4661d33321bce88a1327fa117355);
+            
+    
+            var marker_2eb040b5871a7d18628ecd9062fe6884 = L.marker(
+                [-32.0671282176756, -60.6426461219973],
+                {
+}
+            ).addTo(feature_group_958eb0f74a9416228f9175af33bb84b2);
+        
+    
+            var div_icon_ba618aa088a6ad870c87cf0e8a123b4e = L.divIcon({
+  "html": "\u003cdiv style=\"background:#9a6324; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e2\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_bcb6b400528022a62556ec25d26cd98b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_59156167b15c5243fddc91b478051b6e = $(`<div id="html_59156167b15c5243fddc91b478051b6e" style="width: 100.0%; height: 100.0%;"><b>Diamante</b><br>Circuito 7. Nogoyá + Diamante + Viale + Cerrito + María Grande<br>Permanencia: a definir</div>`)[0];
+                popup_bcb6b400528022a62556ec25d26cd98b.setContent(html_59156167b15c5243fddc91b478051b6e);
+            
+        
+
+        marker_2eb040b5871a7d18628ecd9062fe6884.bindPopup(popup_bcb6b400528022a62556ec25d26cd98b)
+        ;
+
+        
+    
+    
+            marker_2eb040b5871a7d18628ecd9062fe6884.bindTooltip(
+                `<div>
+                     Diamante
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2eb040b5871a7d18628ecd9062fe6884.setIcon(div_icon_ba618aa088a6ad870c87cf0e8a123b4e);
+            
+    
+            var marker_f406d917657a7ad92366e565be93e48a = L.marker(
+                [-31.8721090330188, -60.0129512483241],
+                {
+}
+            ).addTo(feature_group_958eb0f74a9416228f9175af33bb84b2);
+        
+    
+            var div_icon_9dc8652dcfd76e11238e525ac4c72f2f = L.divIcon({
+  "html": "\u003cdiv style=\"background:#9a6324; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e3\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_875436bb9a429158f359bfaa6662281b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0a093c1c0a4163aeae344163489987ab = $(`<div id="html_0a093c1c0a4163aeae344163489987ab" style="width: 100.0%; height: 100.0%;"><b>Viale</b><br>Circuito 7. Nogoyá + Diamante + Viale + Cerrito + María Grande<br>Permanencia: a definir</div>`)[0];
+                popup_875436bb9a429158f359bfaa6662281b.setContent(html_0a093c1c0a4163aeae344163489987ab);
+            
+        
+
+        marker_f406d917657a7ad92366e565be93e48a.bindPopup(popup_875436bb9a429158f359bfaa6662281b)
+        ;
+
+        
+    
+    
+            marker_f406d917657a7ad92366e565be93e48a.bindTooltip(
+                `<div>
+                     Viale
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f406d917657a7ad92366e565be93e48a.setIcon(div_icon_9dc8652dcfd76e11238e525ac4c72f2f);
+            
+    
+            var marker_dce785de01c2a8a5a9a3cad64ab1d8b8 = L.marker(
+                [-31.582388959984, -60.0736871986697],
+                {
+}
+            ).addTo(feature_group_958eb0f74a9416228f9175af33bb84b2);
+        
+    
+            var div_icon_ad8f78803924b98396c86713a6322125 = L.divIcon({
+  "html": "\u003cdiv style=\"background:#9a6324; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e4\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_9fb39701f557913fb3bb6a7b9f122437 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9c2da783585653a3e70eac91272e0372 = $(`<div id="html_9c2da783585653a3e70eac91272e0372" style="width: 100.0%; height: 100.0%;"><b>Cerrito</b><br>Circuito 7. Nogoyá + Diamante + Viale + Cerrito + María Grande<br>Permanencia: a definir</div>`)[0];
+                popup_9fb39701f557913fb3bb6a7b9f122437.setContent(html_9c2da783585653a3e70eac91272e0372);
+            
+        
+
+        marker_dce785de01c2a8a5a9a3cad64ab1d8b8.bindPopup(popup_9fb39701f557913fb3bb6a7b9f122437)
+        ;
+
+        
+    
+    
+            marker_dce785de01c2a8a5a9a3cad64ab1d8b8.bindTooltip(
+                `<div>
+                     Cerrito
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dce785de01c2a8a5a9a3cad64ab1d8b8.setIcon(div_icon_ad8f78803924b98396c86713a6322125);
+            
+    
+            var marker_a61ba1ada62a1ddfd66bd9d1d0420f8a = L.marker(
+                [-31.6628074993378, -59.9040145960044],
+                {
+}
+            ).addTo(feature_group_958eb0f74a9416228f9175af33bb84b2);
+        
+    
+            var div_icon_1484d25a2dfa5faf02d226a521c645ae = L.divIcon({
+  "html": "\u003cdiv style=\"background:#9a6324; color:white;\n                        width:26px; height:26px; border-radius:50%;\n                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);\n                        display:flex; align-items:center; justify-content:center;\n                        font:bold 14px sans-serif;\"\u003e5\u003c/div\u003e",
+  "iconSize": [26, 26],
+  "iconAnchor": [13, 13],
+  "className": "empty",
+});
+        
+    
+        var popup_6c7f2a79228c44be0f3684644684080d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3e3ade255a95ebdbfc923dbbd34bece7 = $(`<div id="html_3e3ade255a95ebdbfc923dbbd34bece7" style="width: 100.0%; height: 100.0%;"><b>María Grande</b><br>Circuito 7. Nogoyá + Diamante + Viale + Cerrito + María Grande<br>Permanencia: a definir</div>`)[0];
+                popup_6c7f2a79228c44be0f3684644684080d.setContent(html_3e3ade255a95ebdbfc923dbbd34bece7);
+            
+        
+
+        marker_a61ba1ada62a1ddfd66bd9d1d0420f8a.bindPopup(popup_6c7f2a79228c44be0f3684644684080d)
+        ;
+
+        
+    
+    
+            marker_a61ba1ada62a1ddfd66bd9d1d0420f8a.bindTooltip(
+                `<div>
+                     María Grande
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "offset": [14, 0],
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a61ba1ada62a1ddfd66bd9d1d0420f8a.setIcon(div_icon_1484d25a2dfa5faf02d226a521c645ae);
+            
+    
+            var marker_5d48936579f26970da808805b95a4045 = L.marker(
+                [-31.7401601621031, -60.5274260494443],
+                {
+}
+            ).addTo(map_0c4f18f3039a481108c74b511220310a);
+        
+    
+            var icon_3ba60980a98677ad789ffef32985fb1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "home",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5423840bc69e866c0fc61c00798a38bc = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_aeecd40a9a53d1b2a0adb287d94eb8b7 = $(`<div id="html_aeecd40a9a53d1b2a0adb287d94eb8b7" style="width: 100.0%; height: 100.0%;"><b>Paraná</b> (salida y llegada)<br>1. Gualeguaychú: sale 5:00, vuelve 19:00<br>2. Concepción del Uruguay: sale 5:00, vuelve 19:30/20:00<br>3. Concordia: sale 5:00, vuelve 19:30/20:00<br>4. Chajarí: sale 5:00, vuelve 21:00<br>5. Federal: sale 6:00, vuelve 20:00<br>6. Crespo/Libertador/Ramírez: sale a definir, vuelve a definir<br>7. Nogoyá + Diamante + Viale + Cerrito + María Grande: sale a definir, vuelve a definir</div>`)[0];
+                popup_5423840bc69e866c0fc61c00798a38bc.setContent(html_aeecd40a9a53d1b2a0adb287d94eb8b7);
+            
+        
+
+        marker_5d48936579f26970da808805b95a4045.bindPopup(popup_5423840bc69e866c0fc61c00798a38bc)
+        ;
+
+        
+    
+    
+            marker_5d48936579f26970da808805b95a4045.bindTooltip(
+                `<div>
+                     Paraná
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5d48936579f26970da808805b95a4045.setIcon(icon_3ba60980a98677ad789ffef32985fb1e);
+            
+    
+            var layer_control_c5a8b36d745a4210455da3bbb83c3e7c_layers = {
+                base_layers : {
+                },
+                overlays :  {
+                    "\u003cspan style=\"color:#e6194b; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 1. Gualeguaych\u00fa" : feature_group_f5512b30735c916eaef91ec74f50d02e,
+                    "\u003cspan style=\"color:#3cb44b; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 2. Concepci\u00f3n del Uruguay" : feature_group_c69449d4f367f4b81f07df2d0fd52a56,
+                    "\u003cspan style=\"color:#4363d8; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 3. Concordia" : feature_group_612c2f6dd75e67985448529351eae42a,
+                    "\u003cspan style=\"color:#f58231; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 4. Chajar\u00ed" : feature_group_74710df300177e694a336fecd186b80d,
+                    "\u003cspan style=\"color:#911eb4; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 5. Federal" : feature_group_8e6eb5d8fd626019900ed1a49f77d526,
+                    "\u003cspan style=\"color:#008080; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 6. Crespo/Libertador/Ram\u00edrez" : feature_group_c3ea0e1a1d944be64a6025db8e6f0d6b,
+                    "\u003cspan style=\"color:#9a6324; font-size:18px;\"\u003e\u25cf\u003c/span\u003e 7. Nogoy\u00e1 + Diamante + Viale + Cerrito + Mar\u00eda Grande" : feature_group_958eb0f74a9416228f9175af33bb84b2,
+                },
+            };
+            let layer_control_c5a8b36d745a4210455da3bbb83c3e7c = L.control.layers(
+                layer_control_c5a8b36d745a4210455da3bbb83c3e7c_layers.base_layers,
+                layer_control_c5a8b36d745a4210455da3bbb83c3e7c_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_0c4f18f3039a481108c74b511220310a);
+
+        
+    
+            map_0c4f18f3039a481108c74b511220310a.fitBounds(
+                [[-34.2, -61.0], [-29.9, -57.6]],
+                {}
+            );
+        
+</script>
+</html>
