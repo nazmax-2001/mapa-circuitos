@@ -28,12 +28,24 @@ for nombre_tabla, tabla in [("visitas.csv", visitas), ("asistentes.csv", asisten
 parana = coords[coords["localidad"] == "Paraná"].iloc[0]
 punto_parana = [parana["lat"], parana["lon"]]
 
-# 3. Estados de visita: color y texto de cada uno
+# 3. Colores
+# Relleno del punto = estado de la visita
 ESTADOS = {
     "convenio":      ("#1565c0", "Convenio firmado"),
     "candidato":     ("#2e7d32", "Con candidato"),
     "sin_candidato": ("#c62828", "Visitado, sin candidato"),
     "no_visitado":   ("#9e9e9e", "No visitado"),
+}
+
+# Anillo del punto = circuito (colores que NO repiten los de estado)
+COLORES_CIRCUITO = {
+    1: "#8e24aa",  # violeta
+    2: "#ef6c00",  # naranja
+    3: "#fdd835",  # amarillo
+    4: "#6d4c41",  # marrón
+    5: "#f48fb1",  # rosa
+    6: "#00bcd4",  # celeste
+    7: "#212121",  # negro
 }
 
 def calcular_estado(p):
@@ -66,6 +78,12 @@ def html_asistentes(localidad):
                 partes.append(f"&nbsp;&nbsp;• {linea}")
     return "<br>".join(partes)
 
+def anillo(color, tam=10, grosor=3):
+    """Circulito con borde de color, para usar en el panel y la barra."""
+    return (f'<span style="display:inline-block; width:{tam}px; height:{tam}px; '
+            f'border-radius:50%; border:{grosor}px solid {color}; '
+            f'margin-right:5px; vertical-align:middle;"></span>')
+
 # 4. Mapa base
 # Rectángulo de la provincia: define la vista inicial
 PROV_LAT_MIN, PROV_LAT_MAX = -34.1, -30.1
@@ -81,8 +99,12 @@ folium.TileLayer("OpenStreetMap", control=False, min_zoom=7).add_to(mapa)
 
 # 5. Un grupo (capa) por circuito
 for _, circ in circuitos.iterrows():
+    color_circuito = COLORES_CIRCUITO.get(int(circ["circuito"]), "#000000")
     nombre_capa = f"{circ['circuito']}. {circ['nombre']}"
-    grupo = folium.FeatureGroup(name=nombre_capa, show=False)
+    grupo = folium.FeatureGroup(
+        name=f"{anillo(color_circuito)}{nombre_capa}",
+        show=False,
+    )
 
     paradas_circ = paradas[paradas["circuito"] == circ["circuito"]].sort_values("orden")
 
@@ -90,14 +112,19 @@ for _, circ in circuitos.iterrows():
         estado = calcular_estado(p)
         color, texto_estado = ESTADOS[estado]
 
+        linea_circuito = (f"Circuito <b style='color:{color_circuito}'>"
+                          f"{nombre_capa}</b><br>")
+
         if estado == "no_visitado":
+            color_anillo = "#bdbdbd"  # gris claro: sin color de circuito
             texto = (f"<b>{p['localidad']}</b><br>"
-                     f"Circuito {nombre_capa}<br>"
+                     f"{linea_circuito}"
                      f"Estado: {texto_estado}<br>"
                      f"Permanencia prevista: {p['permanencia']}")
         else:
+            color_anillo = color_circuito
             texto = (f"<b>{p['localidad']}</b><br>"
-                     f"Circuito {nombre_capa}<br>"
+                     f"{linea_circuito}"
                      f"Estado: <b style='color:{color}'>{texto_estado}</b><br>"
                      f"Fecha de visita: {p['fecha_visita']}<br>"
                      f"Lugar: {o_pendiente(p['lugar'])}<br>"
@@ -105,20 +132,22 @@ for _, circ in circuitos.iterrows():
                      f"Candidato Point: {o_pendiente(p['candidato'])}<br>"
                      f"<br><b>Asistentes</b><br>{html_asistentes(p['localidad'])}")
 
+        # Relleno = estado; anillo = circuito (solo en los visitados)
         icono = folium.DivIcon(
             html=f"""<div style="background:{color}; color:white;
-                        width:26px; height:26px; border-radius:50%;
-                        border:2px solid white; box-shadow:0 1px 4px rgba(0,0,0,0.4);
+                        width:22px; height:22px; border-radius:50%;
+                        border:4px solid {color_anillo};
+                        box-shadow:0 0 0 2px white, 0 1px 5px rgba(0,0,0,0.5);
                         display:flex; align-items:center; justify-content:center;
-                        font:bold 14px sans-serif;">{p['orden']}</div>""",
-            icon_size=(26, 26),
-            icon_anchor=(13, 13),
+                        font:bold 13px sans-serif;">{p['orden']}</div>""",
+            icon_size=(30, 30),
+            icon_anchor=(15, 15),
         )
         folium.Marker(
             location=[p["lat"], p["lon"]],
             icon=icono,
             tooltip=folium.Tooltip(p["localidad"], permanent=True,
-                                   direction="right", offset=(14, 0)),
+                                   direction="right", offset=(18, 0)),
             popup=folium.Popup(texto, max_width=340),
         ).add_to(grupo)
 
@@ -153,7 +182,8 @@ html, body {{ margin: 0; height: 100%; }}
     overflow-x: auto; white-space: nowrap;
 }}
 #barra .titulo {{ font-size: 17px; font-weight: bold; }}
-#barra .leyenda {{ display: flex; gap: 16px; font-size: 13px; }}
+#barra .leyenda {{ display: flex; gap: 16px; font-size: 13px; align-items: center; }}
+#barra .nota {{ font-size: 12px; color: #555; }}
 #barra .punto {{
     display: inline-block; width: 12px; height: 12px;
     border-radius: 50%; margin-right: 5px; vertical-align: middle;
@@ -185,6 +215,7 @@ barra = f"""
 <div id="barra">
   <span class="titulo">Circuitos por Entre Ríos</span>
   <span class="leyenda">{items_leyenda}</span>
+  <span class="nota">Relleno = estado &nbsp;·&nbsp; {anillo('#555', 8, 2)}Anillo = circuito (ver panel)</span>
 </div>
 """
 mapa.get_root().html.add_child(folium.Element(barra))
